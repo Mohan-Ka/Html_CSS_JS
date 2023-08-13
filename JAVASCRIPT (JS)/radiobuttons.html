@@ -1,0 +1,31 @@
+<html>
+
+<head>
+<script type="text/javascript">
+	function myFunction()
+	{
+		var a=document.getElementById("m");
+		var b=document.getElementById("f");
+		var c=document.getElementById("o");
+		
+		if(a.checked==true)
+			alert("you selected "+a.value);
+		else if(b.checked==true)
+			alert("You selected "+b.value);
+		else 
+			alert("you selected "+c.value);
+	}
+	
+
+</script>
+
+</head>
+<body>
+	<input type="radio" name="sex" id="m" value="Male">Male
+	<input type="radio" name="sex" id="f" value="Female">Female
+	<input type="radio" name="sex" id="o" value="others">Others
+	<br></br>
+	<button type="button" onclick='myFunction()'>Click here</button>
+</body>
+
+</html>

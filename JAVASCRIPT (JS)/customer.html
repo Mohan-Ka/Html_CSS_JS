@@ -1,0 +1,271 @@
+<html>
+<head>
+<title>Form with validations </title>
+   <script type="text/javascript">
+    function validate()
+	{
+	  //text boxes
+	  var fname=document.getElementById("fn").value;
+	  var lname=document.getElementById("ln").value;
+	  
+	  //Mobile number
+	  var mob=document.getElementById("mo").value;
+	  var mob_p=/^[0-9]{10}$/;
+	  
+	  //radio buttons
+	  var gen="";
+	  var x=document.getElementsByName("gender");
+	  for(i=0;i<x.length;i++)
+	  {
+	    if(x[i].checked==true)
+		gen=x[i].value;
+	   }
+	   
+	   //checkbox
+	   var lan="";
+	   var languages=document.getElementsByClassName("lang");
+	   for(i=0;i<languages.length;i++)
+	   {
+	     if(languages[i].checked==true)
+		 {
+		    lan=lan +" "+languages[i].value;
+		  }
+	   }
+	   
+	    //dropdown menu
+	  var st="";
+	  var state=document.getElementById("type");
+	  var st=state.options[state.selectedIndex].value;
+	   
+	   //car company
+	   var pl=document.getElementById("cr").value;
+	   
+	   //pincode
+	   var pin=document.getElementById("pincode").value;
+	   var pin_p=/^[0-9]{6}$/;
+	   
+	   //Email
+	   var email=document.getElementById("em").value;
+	   var em_p=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]+)(\.[a-z]+)?$/;
+	   
+	   //Password
+	   var passwd=document.getElementById("pass").value;
+	   var ps=passwd.trim().length;
+	   
+	   //date
+	   var dt=document.getElementById("dob").value;
+
+	   //color
+	   var col=document.getElementById("cc").value;
+
+       //file
+	   var files=document.getElementById("fil").value;
+	   
+	   //seat number
+	   var seats=document.getElementById("seat").value;
+	   
+	   //range
+	   var ranges=document.getElementById("rang").value;
+
+	   //valodating data
+	   if(fname.trim()=="")
+	   {
+	     alert("Enter fname");
+		 return false;
+ 	    }
+		else if(lname.trim()=="")
+		{
+		 alert("Enter lname");
+		 return false;
+		}
+		else if(mob.trim()=="")
+		 {
+		   alert("Mobile  number empty");
+		   return false;
+		 }
+		 else if(mob_p.test(mob)==false)
+		{
+		  alert("invalid mobile");
+		  return false;
+		}
+	    
+		 else if(gen=="")
+		 {
+		  alert("Select gender");
+		  return false;
+		 }
+		 else if(lan=="")
+		 {
+		  alert("Select language");
+		  return false;
+		 }
+		 
+		 else if(st=="")
+		{
+		  alert("Select car type");
+		  return false;
+		 }
+		else if(pl.trim()=="")
+		{
+		  alert("Enter car company");
+		  return false;
+		}
+		else if(pin.trim()=="")
+		 {
+		   alert("pincode empty");
+		   return false;
+		 }
+		 else if(pin_p.test(pin)==false)
+		{
+		  alert("Invalid Pincode");
+		  return false;
+		}
+		else if(email.trim()=="")
+		{
+		  alert("enter email");
+		  return false;
+		}
+		else if(em_p.test(email)==false)
+		{
+		  alert("email invalid");
+		  return false;
+		}
+		
+		else if(passwd.trim()=="")
+		{
+		 alert("enter password");
+		 return false;
+		}
+		else if(ps<8 || ps>12)
+		{
+		 alert("password should be betn 8 to 12 digits");
+		 return false;
+		}
+		else if(passwd.search(/[A-Z]/)==-1)
+		{
+		  alert("atleast one uppercase letter");
+		  return false;
+		}
+		else if(passwd.search(/[a-z]/)==-1)
+		{
+		 alert("Atleast 1 lowercase letter ");
+		 return false;
+		}
+		else if(passwd.search(/[0-9]/)==-1)
+		{
+		 alert("atleast 1 number");
+		 return false;
+		}
+		else if(passwd.search(/[\.\!\?\@\#\$\-\;]/)==-1)
+		{
+		  alert("atleast one symbol");
+		  return false;
+		}
+		
+		else if(dt.trim()=="")
+		{
+		 alert("pick a date");
+		 return false;
+		}
+		else if(col=="#000000")
+		{
+		 alert("pick a color");
+		 return false;
+		}
+		else if(files.trim()=="")
+		{
+		 alert("select a file");
+		 return false;
+		}
+		else if(seats.trim()=="")
+		{
+		 alert("select the no. of seats");
+		 return false;
+		}
+		else if(ranges.trim()=="")
+		{
+		 alert("select the range");
+		 return false;
+		}
+	    else  
+	    {  
+	      document.write("<br>First name "+fname+"<br>Last name "+lname+"<br>Mobile is "+mob+"<br> Gender is "+gen+"<br> Language is "+lan+"<br>Car type is "+st+"<br>Car company is "+pl+"<br>Pincode is "+pin+"<br> Email is "+email+"<br> Password validated successfully <br> Date is "+dt+"<br> Color is "+col+"<br> File uploaded "+files+"<br> Seats   "+seats+"<br> Range is  "+ranges);
+	      return true;
+	    }
+	 }
+	
+  </script>
+</head>
+<body bgcolor="paleturquoise">
+    <div align="center">
+    <h1>Data of customers</h1>
+    <form action="assign4.html"  onsubmit="return validate()">
+	    <label>Enter first name</label><br>
+		<input type="text" id="fn" name"fn"><br><br>
+		
+		<label>Enter last name</label>
+		<br><input type="text" id="ln" name"ln"><br><br>
+		
+		<label>Enter mobile number</label>
+		<br><input type="text" id="mo" name="mob" ><br><br>
+		
+        <label> Select Gender</label><br>
+		<input type="radio" id="map" name="gender" value="MALE" >Male<br>
+		<input type="radio" id="mai" name="gender" value="FEMALE">Female<br>
+		<input type="radio" id="maL" name="gender" value="OTHERS">Others<br>
+		
+		<p>Languages interested in</p>
+		<input type="checkbox" id="m" name="n" class="lang" value="ENGLISH">English<br>
+		<input type="checkbox" id="n" name="j" class="lang" value="HINDI">Hindi<br>
+		<input type="checkbox" id="k" name="l" class="lang" value="KONKANI">Konkani<br>
+		<input type="checkbox" id="o" name="p" class="lang" value="MARATHI">Marathi<br><br>
+		
+		<p>Select the car type you want</p>
+		<select id="type">
+		    <option value=""></option>
+		    <option value="HATCHBACK">Hatchback</option>
+			<option value="SEDAN">Sedan</option>
+			<option value="SUV" >SUV</option>
+			<option value="COUPE">Coupe</option>
+			<option value="LIMOUSINE">Limousine</option>
+		</select>	<br><br>
+		
+		<input type="text" id="cr" name="pl1" placeholder="Enter your car company name"><br><br>
+		
+		<label>Enter pincode</label><br>
+		<input type="text" id="pincode" name="af"  ><br><br>
+		
+		<label>State</label><br>
+		<input type="text" id="rd" name="rd" value="Goa" ><br><br>
+		
+		<label>Country</label><br>
+		<input type="text" id="di" name="di" value="India" ><br><br>
+		
+		<label> Enter Email </label><br>
+		<input type="Email" id="em" name="em"><br><br>
+		
+		<label> Password</label><br>
+		<input type="password" id="pass" name="passs"><br><br>
+		
+		<label>Date of birth </label><br>
+		<input type="date"  id="dob" name="dobb"><br><br>
+		
+		<label>Select car color </label><br>
+		<input type="color" id="cc" name="coll" ><br><br>
+		
+		<label>Upload passport size photo </label><br>
+		<input type="file"  id="fil" name="fi"><br><br>
+		
+		<label>Select car seat no. 2 to 8</label><br>
+		<input type="number" id="seat" name="no" min="2" max="8"><br><br>
+		
+		<label>select price range from 10 to 35 Lakhs</label><br>
+		<input type="range" id="rang" min="10" max="35" id="ra" step="5" ><br>	
+		
+		<input type="Submit"  value="submit">
+		
+		<input type="Reset"  value="reset"><br>
+		</div>
+	</form>
+</body>	
+</html>

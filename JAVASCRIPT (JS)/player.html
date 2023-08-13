@@ -1,0 +1,184 @@
+<html>
+<head>
+<title>Football Player</title>
+<script type="text/javascript">
+	
+	 function validate()
+	{
+	  //-----text boxes-------
+	  var firstname=document.getElementById("fname");
+	  var lastname=document.getElementById("lname");
+	  var birth_date=document.getElementById("Bt");
+	  
+	 /* //-----radio buttons-----
+	  var gender_selected="";
+	  var x = document.getElementByName("sex");
+	  for(var i=0;i<x.length;i++)
+	  {
+		if(x[i].checked==true)
+		gender_selected = x[i].value;
+	  }
+	  */
+	  var country=document.getElementById("coun").value;
+	  
+	  var club=document.getElementById("cl").value;
+	  
+	  var jno=document.getElementById("nu").value;
+	  
+	  var matches=document.getElementById("mat").value;
+	  
+	  var goalz=document.getElementById("goal").value;
+	  
+	  var yellow=document.getElementById("ycards").value;
+	  
+	  var red=document.getElementById("rcards").value;
+	
+	//------checkbox--------
+	  var position=document.getElementByName("pos");
+	  var po="";
+	   for(var i=0;i<position.length;i++)
+	  {
+		if(position[i].checked==true)
+		{
+		po=po + "" + position[i].value;
+	    }
+	  }
+	  
+	  
+	  //----dropdown----
+	  var brand = "";
+	  var c=document.getElementById("sponser");
+	  var brand=c.options[c.selectedIndex].value;
+	  */
+	  //-----validations----
+	   if(firstname.value.trim()=="")
+	   {
+	     alert("please enter firstname");
+		 return false;
+ 	    }
+		else if(lastname.value.trim()=="")
+		{
+		 alert("please enter lastname");
+		 return false;
+		}
+	    else if(birth_date.value=="")
+		{
+		 alert("please select birthdate");
+		 return false;
+		}
+	   /* else if(gender_selected == "")
+		 {
+		  alert("Select gender");
+		  return false;
+		 }*/
+		 if(country.trim()=="")
+	    {
+	     alert("please enter country");
+		 return false;
+ 	    }
+		if(club.trim()=="")
+	    {
+	     alert("please enter club");
+		 return false;
+ 	    }
+		if(jno.trim()=="")
+	    {
+	     alert("please enter jersy number");
+		 return false;
+ 	    }
+		if(matches.trim()=="")
+	    {
+	     alert("please enter matches played");
+		 return false;
+ 	    }
+		if(goalz.trim()=="")
+	    {
+	     alert("please enter the number of goals");
+		 return false;
+ 	    }
+		if(yellow.trim()=="")
+	    {
+	     alert("please enter number of yellow cards");
+		 return false;
+ 	    }
+		if(red.trim()=="")
+	    {
+	     alert("please enter number of red cards");
+		 return false;
+ 	    }
+		if(po=="")
+	    {
+	     alert("please enter position");
+		 return false;
+ 	    }
+		if(brand=="")
+	    {
+	     alert("please enter kit sponser");
+		 return false;
+ 	    }*/
+	}
+ 
+</script>
+</head>
+<center><body>
+<form onsubmit="return validate()">
+<h3>Player Stats and Information</h3>
+<br><label>Enter Firstname:</label><br>
+<br><input type="text" id="fname" class="fname"><br>
+
+<br><label>Enter Lastname:</label><br>
+<br><input type="text" id="lname" class="lname"><br>
+
+<br><label>Select Birthdate:</label><br>
+<br><input type="date" id="Bt" class="bdate"><br> 
+
+<br><label>Select Gender:</label><br> 
+<br><input type="radio" name="sex" id="m" value="Male">Male
+<br><input type="radio" name="sex" id="f" value="Female">Female
+<br><input type="radio" name="sex" id="o" value="others">Others<br></br>
+	
+<br><label>Enter Country:</label><br>
+<br><input type="text" id="coun" class="country"><br> 
+
+<br><label>Enter Club:</label><br>
+<br><input type="text" id="cl" class="cb"><br> 
+
+<br><label>Enter Jersy No:</label><br>
+<br><input type="text" id="nu" class="numb" ><br> 
+
+<br><label>Enter Matches Played:</label><br>
+<br><input type="text" id="mat" class="Matches" ><br> 
+
+<br><label>Enter Goals scored:</label><br>
+<br><input type="text" id="goal" class="goals" ><br> 
+
+<br><label>Enter Yellow cards:</label><br>
+<br><input type="text" id="ycards" class="cards" ><br> 
+
+<br><label>Enter Red cards:</label><br>
+<br><input type="text" id="rcards" class="cards"><br> 
+
+<br><br><label>Select Position: </label><br>
+	<input type="checkbox" id="gk" name="pos" class="position" value="Goalkeeper">Goalkeeper<br>
+	<input type="checkbox" id="df" name="pos" class="position" value="Defender">  Defender  <br>
+	<input type="checkbox" id="mf" name="pos" class="position" value="Midfielder">Midfielder<br>
+	<input type="checkbox" id="fw" name="pos" class="position" value="Striker">   Striker   <br><br>
+
+<br><label>Select Kit Sponser:</label><br>
+	<select id="sponser"><br>
+	   <option></option>
+	   <option value="Nike">Nike</option>
+	   <option value="Addidas">Addidas</option>
+	   <option value="Puma">Puma</option>
+	   <option value="Rebook">Rebook</option>
+	   <option value="Puma">Puma</option>
+	   <option value="Mizuno">Mizuno</option>
+	   <option value="Nivia">Nivia</option>
+	   <option value="Decathlon">Decathlon</option>
+	</select>  <br> <br> 
+	
+	<input type="Submit" value="Submit" >
+    <input type="Reset" value="Reset">
+</form>
+</body></center>
+</html>

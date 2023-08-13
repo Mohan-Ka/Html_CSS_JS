@@ -1,0 +1,30 @@
+<html>
+<head>
+<script type="text/javascript">
+function validate()
+{
+  var fname=document.getElementById("fn").value;
+  var lname=document.getElementById("ln").value;
+  var x=document.getElementById("demo").innerHTML;
+  
+  document.write("firstname is "+fname);
+  document.write("<br>lastname is "+lname);
+  document.write("<brElement is "+x);
+  
+}
+</script>
+<head>
+<body>
+<form onsubmit="validate()">
+<label>Enter fname:</label>
+<input type="text" id="fn" name="fname">
+<label>Enter lname:</label>
+<input type="text" id="ln" name="lname">
+
+<p id="demo" >hello</p>
+
+<input type="submit" value="submit">
+<input type="reset" value="reset"> 
+</body>
+
+</html>

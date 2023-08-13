@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Personal Information</title>
+	
+	<script type="text/javascript">
+	
+	 function validate()
+	{
+	  //-----text boxes-------
+	  var fname=document.getElementById("fname").value;
+	  var lname=document.getElementById("lname").value;
+	  
+	  //-------phone number--------
+	  var phno=document.getElementById("pno").value;
+	  var p=/^[789]{1}[0-9]{9}$/;
+	  
+	  //-------radio buttons--------
+	  var gender="";
+	  var x=document.getElementsByName("gender");
+	  for(i=0;i<x.length;i++)
+	  {
+	    if(x[i].checked==true)
+		gender=x[i].value;
+	   }
+	   
+	   
+	   //---------checkbox-----------
+	   var qua="";
+	   var qualification=document.getElementsByClassName("quali");
+	   for(i=0;i<qualification.length;i++)
+	   {
+	     if(qualification[i].checked==true)
+		 {
+		    qua=qua +" "+qualification[i].value;
+		  }
+	   }
+	   
+	    //--------dropdown menu----------
+	  var st="";
+	  var state=document.getElementById("ste");
+	  var st=state.options[state.selectedIndex].value;
+	   
+	   
+	   //----------Email-------------
+	   var email=document.getElementById("eid").value;
+	   var em_p=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]+)(\.[a-z]+)?$/;
+	   
+	   //-----------Password------------
+	   var passwd=document.getElementById("pwd").value;
+	   var ps=passwd.trim().length;
+	   
+	   //-------username-------
+	    var username=document.getElementById("uname").value;
+	   var us=username.trim().length;
+	   
+	   //--------date--------
+	   var dt=document.getElementById("Bt").value;
+
+	   //------color---------
+	   var col=document.getElementById("cl").value;
+
+       //--------file---------
+	   var files=document.getElementById("fe").value;
+	   
+	   //--------seat number----------
+	   var number=document.getElementById("Quantity").value;
+	   
+	   //-------range--------
+	   var range=document.getElementById("Range").value;
+
+	   //------validations--------
+	   if(fname.trim()=="")
+	   {
+	     alert("please enter firstname");
+		 return false;
+ 	    }
+		else if(lname.trim()=="")
+		{
+		 alert("please enter lastname");
+		 return false;
+		}
+		
+		else if(phno.trim()=="")
+		 {
+		   alert("please enter phone number");
+		   return false;
+		 }
+		 else if(p.test(phno)==false)
+		{
+		  alert("invalid");
+		  return false;
+		}
+	    
+		 else if(gender=="")
+		 {
+		  alert("Select gender");
+		  return false;
+		 }
+		 
+		 else if(qualification=="")
+		 {
+		  alert("Select your qualification");
+		 }
+		 
+		 else if(state=="")
+		{
+		  alert("Select your state");
+		  return false;
+		 }
+		
+		else if(email.trim()=="")
+		{
+		  alert("enter email");
+		  return false;
+		}
+		else if(em_p.test(email)==false)
+		{
+		  alert("email invalid");
+		  return false;
+		}
+		
+		
+		else if(passwd.trim()=="")
+		{
+		 alert("enter password");
+		 return false;
+		}
+		else if(ps<6 || ps>10)
+		{
+		 alert("password should be between 6 to 10 characters");
+		 return false;
+		}
+		else if(passwd.search(/[A-Z]/)==-1)
+		{
+		  alert("atleast one uppercase letter");
+		  return false;
+		}
+		else if(passwd.search(/[a-z]/)==-1)
+		{
+		 alert("Atleast 1 lowercase letter ");
+		 return false;
+		}
+		else if(passwd.search(/[0-9]/)==-1)
+		{
+		 alert("atleast 1 number");
+		 return false;
+		}
+		else if(passwd.search(/[\.\!\?\@\#\$\-\;]/)==-1)
+		{
+		  alert("atleast one symbol");
+		  return false;
+		}
+		
+		else if(dt.trim()=="")
+		{
+		 alert("pick a date");
+		 return false;
+		}
+		else if(col=="#000000")
+		{
+		 alert("pick a color");
+		 return false;
+		}
+		else if(files.trim()=="")
+		{
+		 alert("select a file");
+		 return false;
+		}
+		else if(number.trim()=="")
+		{
+		 alert("select the number");
+		 return false;
+		}
+		
+		else if(range.trim()=="")
+		{
+		 alert("select the range");
+		 return false;
+		}
+	 
+	    {  
+	      document.write("<br>First name "+fname+"<br>Last name "+lname+"<br>Mobile is "+phno+"<br> Gender is "+gender+"<br>Email is "+email+"<br> Qualification is "+qua+"<br>State is "+st+"<br>Username is "+username+ "<br>Password validated successfully <br>Date is "+dt+"<br> Color is "+col+"<br> File uploaded "+files+"<br> Range is  "+range);
+	      return true;
+	    }
+	 }
+
+
+	</script>
+</head>
+<center><body bgcolor="#E4EE8E">
+<h1><center>Personal Information</center></h1>
+
+<form onsubmit="return validate()" action="p1.html">
+<label>Enter name: </label>
+<input type="text" id="fname" name="fname" placeholder="Enter first name" ><br><br>
+
+
+<!--<label>Name: </label>
+<input type="text" id="fname" name="fname" value="Joy" readonly><br><br>-->
+
+
+<label>Enter lastname: </label>
+<input type="text" id="lname" name="lname" placeholder="Enter last name" ><br><br>
+
+
+<label>Enter phone no: </label>
+<input type="numbers" id="pno" name="pno" placeholder="Enter phone no"><br><br>
+
+
+<br><h3>Select gender</h3>
+<input type="radio" id="ma" name="gender" value="male">		 male
+<br><input type="radio" id="f" name="gender" value="female">female
+<br><input type="radio" id="ot" name="gender" value="others">others
+
+
+<br><h3>Qualification</h3>
+<input type="checkbox" id="ss" name="qual" value="SSC" class="quali">				SSC
+<br><input type="checkbox" id="hs" name="qual" value="HSSC" class="quali">          HSSC
+<br><input type="checkbox" id="dd" name="qual" value="DEGREE/DIPLOMA" class="quali">DEGREE/DIPLOMA
+
+
+<br><br><label>Nationality: </label>
+<input type="text" id="nat" name="nationality" value="Indian" disabled><br><br>
+
+
+
+<br><br><h3>State</h3>
+<label>Select your State:</label>
+<select id="ste">
+<option value=""></option>
+<option value="Goa">Goa</option>
+<option value="Maharashtra">Maharashtra</option>
+<option value="Delhi">Delhi</option>
+<option value="Karnataka">Karnataka</option>
+</select>
+
+
+<br><br><label>Enter Email address: </label>
+<br><br><input type="email" id="eid" name="email" ><br><br>
+
+
+<h3>Enter password and username </h3>
+<label>Enter username: </label>
+<br><input type="text" id="uname" name="username" ><br>
+<label>Enter Password: </label><br>
+<input type="Password" id="pwd" name="Password" >
+
+
+<br><br><label>Enter DOB:</label>
+<input type="date" id="Bt" name="Birthdate"><br>
+<!--<input type="submit" name="submit"><br>-->
+
+
+<br><br><label>Select your favorite color:</label>
+<input type="color" id="cl" name="color"><br>
+
+
+<br><br><label>Select File:</label>
+<input type="file" id="fe" name="file"><br>
+
+
+<br><br><label>Number field(between 2 to 8):</label>
+<input type="number" id="Quantity" name="Quantity"  min="2" max="8"><br>
+
+
+<br><br><label>Range(between 10 to 35):</label>
+<input type="range" id="Range" name="Range" step="5"  min="10"  max="35"><br><br>
+
+
+<input type="Submit" value="Submit" >
+<input type="Reset" value="Reset">
+
+
+</form>
+</body></center>
+
+</html>

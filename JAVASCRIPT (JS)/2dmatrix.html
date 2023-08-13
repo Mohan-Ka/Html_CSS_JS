@@ -1,0 +1,92 @@
+<html>
+<head>
+<script type="text/javascript">
+	function f1()
+	{
+	var rows;
+	var cols;
+	var i,n,j;
+	
+	var rows=parseInt(prompt("Enter no of rows:"));
+	var cols=parseInt(prompt("Enter no of cols:"));
+	
+	var a = new Array(rows)
+	for(i=0; i<rows; i++)
+	{
+		a[i]= new Array(cols);
+	}
+	
+	for(i=0; i<rows; i++)
+	{
+		for(j=0; j<cols; j++)
+		{
+			a[i][j]=parseInt(prompt("Enter the elements:"));
+		}
+	}
+		
+		document.write("<br>Matrix<br>");
+		
+	for(i=0; i<rows; i++)
+	{
+		for(j=0; j<cols; j++)
+		{
+			document.write("  " +a[i][j]);
+		}
+		document.write("<br>");
+	}
+	}
+	
+	//2nd matrix
+	function f2()
+	{
+	var rows1;
+	var cols1;
+	var y,n,x;
+	
+	var rows1=parseInt(prompt("Enter no of rows:"));
+	var cols1=parseInt(prompt("Enter no of cols:"));
+	
+	var b = new Array(rows1)
+	for(y=0; y<rows1; y++)
+	{
+		b[y]= new Array(cols1);
+	}
+	
+	for(y=0; i<rows1; y++)
+	{
+		for(x=0; x<cols1; x++)
+		{
+			b[y][x]=parseInt(prompt("Enter the elements:"));
+		}
+	}
+		
+		document.write("<br>Matrix<br>");
+		
+	for(y=0; y<rows1; y++)
+	{
+		for(x=0; x<cols1; x++)
+		{
+			document.write("  " +b[y][x]);
+		}
+		document.write("<br>");
+	}
+	}
+	
+</script>
+</head>
+
+<body>
+<button type="button" onclick="function f1()">Click here for 1st Matrix</button><br>
+<button type="button" onclick="function f2()">Click here for 2st Matrix</button>
+</body>
+
+
+
+
+
+
+
+
+
+
+</html>

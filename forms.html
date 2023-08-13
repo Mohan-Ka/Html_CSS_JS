@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<title>Personal Information</title>
+<body bgcolor="#E4EE8E">
+<h1><center>Personal Information</center></h1>
+
+<form>
+<label>Enter name: </label>
+<input type="text" id="fname" name="fname" placeholder="Enter first name" autocomplete><br><br>
+
+
+<!--<label>Name: </label>
+<input type="text" id="fname" name="fname" value="Joy" readonly><br><br>-->
+
+
+<label>Enter lastname: </label>
+<input type="text" id="lname" name="lname" placeholder="Enter last name" autocomplete><br><br>
+
+
+<label>Enter phone no: </label>
+<input type="numbers" id="pno" name="pno" placeholder="Enter phone no"><br><br>
+
+
+<br><h3>Select gender</h3>
+<input type="radio" id="ma" name="gender" value="male">male
+<br><input type="radio" id="fe" name="gender" value="female">female
+<br><input type="radio" id="ot" name="gender" value="others">others
+
+
+<br><h3>Qualification</h3>
+<input type="checkbox" id="ss" name="gender" value="SSC">SSC
+<br><input type="checkbox" id="hs" name="gender" value="HSSC">HSSC
+<br><input type="checkbox" id="dd" name="gender" value="DEGREE/DIPLOMA" checked>DEGREE/DIPLOMA
+
+
+<br><br><label>Nationality: </label>
+<input type="text" id="nat" name="nationality" value="Indian" disabled><br><br>
+
+
+
+<br><br><h3>State</h3>
+<label>Select your State:</label>
+<select>
+<option value="Goa">Goa</option>
+<option value="Maharashtra">Maharashtra</option>
+<option value="Delhi">Delhi</option>
+<option value="Karnataka">Karnataka</option>
+</select>
+
+
+<br><br><label>Enter Email address: </label>
+<br><br><input type="email" id="em" name="email" required><br><br>
+
+
+<h3>Enter password and username </h3>
+<label>Enter username: </label>
+<br><input type="username" id="uname" name="username" autofocus><br>
+<label>Enter Password: </label><br>
+<input type="Password" id="pwd" name="Password" autofocus>
+
+
+<br><br><label>Enter DOB:</label>
+<input type="date" id="Bt" name="Birthdate"><br>
+<!--<input type="submit" name="submit"><br>-->
+
+
+<br><br><label>Select your favorite color:</label>
+<input type="color" id="cl" name="color"><br>
+
+
+<br><br><label>Select File:</label>
+<input type="file" id="fe" name="file"><br>
+
+
+<br><br><label>Number field(between 2 to 8):</label>
+<input type="number" id="Quantity" name="Quantity"  min="2" max="8"><br>
+
+
+<br><br><label>Range(between 10 to 35):</label>
+<input type="range" id="Range" name="Range" step="5"  min="10"  max="35"><br><br>
+
+
+<input type="Submit" value="Submit" >
+<input type="Reset" value="Reset">
+
+
+</form>
+</body>
+
+</html>

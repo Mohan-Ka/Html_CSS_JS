@@ -1,0 +1,37 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function validate()
+		{
+			var em=document.getElementById("eid").value;
+			var em_p=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]+)(\.[a-z]+)+$/;
+			
+			if(em.trim()=="")
+			{
+			alert("Email cannot be empty");
+			return false;
+			}
+			else if(em_p.test(em)==false)
+			{
+			alert("Invalid email");
+			return false;
+			}
+			else
+			{
+			document.write("Email is " +em);
+		    return true;
+			}
+		}
+			
+	</script>
+</head>
+
+<body>
+	<form onsubmit="return validate()" >
+	<label>Enter Email </label>
+	<input type="text"  name="emailid" id="eid" autocomplete="off">
+	<input type="submit"  value="submit">
+	<input type="reset"  value="reset">
+	</form>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<html>
+<head>
+  <script type="text/javascript">
+    function validate()
+	{
+	  //text boxes
+	  var fname=document.getElementById("fn").value;
+	  var lname=document.getElementById("ln").value;
+	  
+	  //dropdown menu
+	  var st="";
+	  var state=document.getElementById("states");
+	  var st=state.options[state.selectedIndex].value;
+	  
+	  //radio buttons
+	  var branch_selected="";
+	  var x=document.getElementsByName("branch");
+	  for(i=0;i<x.length;i++)
+	  {
+	    if(x[i].checked==true)
+		branch_selected=x[i].value;
+	   }
+	   
+	   //checkbox
+	   
+	   var lan="";
+	   var languages=document.getElementsByClassName("abc");
+	   for(i=0;i<languages.length;i++)
+	   {
+	     if(languages[i].checked==true)
+		 {
+		    lan=lan +" "+languages[i].value;
+		  }
+	   }
+	   
+	   if(fname.trim()=="")
+	   {
+	     alert("enter fname");
+		 return false;
+ 	    }
+		else if(lname.trim()=="")
+		{
+		 alert("Enter lname");
+		 return false;
+		}
+	    else if(st=="")
+		{
+		  alert("select state");
+		  return false;
+		 }
+		 else if(branch_selected=="")
+		 {
+		  alert("select branch");
+		  return false;
+		 }
+		 else if(lan=="")
+		 {
+		  alert("select lang");
+		  return false;
+		 }
+	    else  
+	{  
+	
+		
+	document.write("<br>first name "+fname+"<br>last name "+lname+ " <br>state is "+st+"<br> branch is "+branch_selected+"<br> language is"+lan);
+	}
+	  }
+	
+	
+  </script>
+</head>
+<body>
+  <form onsubmit="return validate()"  >
+     
+    <label>Enter first name</label><br>
+    <input type="text" id="fn" ><br>
+	<label>enter last name</label><br>
+	<input type="text" id="ln"><br><br>
+	
+	<label>select state</label><br>
+	<select id="states"><br>
+	   <option></option>
+	   <option value="Goa">GOA</option>
+	   <option value="Maha">MAHA</option>
+	   <option value="Tn">TN</option>
+	</select>  <br> <br>
+	
+    <label>select branch</label><br>
+	<input type="radio" id="co" name="branch" value="Comp">COMP<br>
+    <input type="radio" id="ece" name="branch" value="Ece">ECE<br>
+    <input type="radio" id="me" name="branch" value="Mech">MECH<br><br>
+	
+	<label>select language</label><br>
+	<input type="checkbox" id="eg" name="lang" class="abc" value="Eng">ENG<br>
+	<input type="checkbox" id="hin" name="lang" class="abc" value="Hindi">HINDI<br>
+	<input type="checkbox" id="mar" name="lang" class="abc" value="Marathi">MARATHI<br><br>
+	
+	<input type="submit" value="submit">
+   </form>
+</body>
+</html>

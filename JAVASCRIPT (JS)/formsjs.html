@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Personal Information</title>
+	
+	<script type="text/javascript">
+	
+	function validate()
+		{
+			var firstname = document.getElementById("fname");
+			var lastname = document.getElementById("lname");
+			
+			//---phone number---
+			var ph = document.getElementById("pno").value;
+			var p = /^[789]{1}[0-9]{9}$/;
+			if(p.test(pn)==false)
+			{
+				alert("invalid");
+			}
+			else
+			{
+				alert("Phone number: "+pn);
+			}
+		
+		
+		
+		
+		//-------Email---------
+			var em=document.getElementById("eid").value;
+			var em_p=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]+)(\.[a-z]+)+$/;
+			
+			if(em.trim()=="")
+			{
+			alert("Email cannot be empty");
+			return false;
+			}
+			else if(em_p.test(em)==false)
+			{
+			alert("Invalid email");
+			return false;
+			}
+			else
+			{
+			alert("Email is " +em);
+		   	return true;
+			}
+
+
+		//-------radio buttons---------
+			var a=document.getElementById("ma");
+			var b=document.getElementById("fe");
+			var c=document.getElementById("ot");
+		
+			if(a.checked==true)
+			alert("you selected "+a.value);
+			else if(b.checked==true)
+			alert("You selected "+b.value);
+			else 
+			alert("you selected "+c.value);
+
+        //-------drop down menu--------
+			var x=document.getElementById("state");
+			var y=x.options[x.selectedIndex].value;
+                        alert(y);
+	
+		//--------checkboxes-----------
+			var qualification = document.getElementByName("qual");
+			var q="";
+			for(var i=0;i<qualification.length;i++)
+			{
+				if(qualification[i].checked==true)
+				{
+				q = q + " "+ qualification[i].value;
+				}
+			}
+			
+			if(q=="")
+			{
+				alert("please select checkboxes");
+				return false;
+			}
+			else
+			{
+				alert("checkboxes selected are " +q);
+				return true;
+			}
+			
+			
+			
+			//----username----
+			var username = document.getElementById("uname");
+			if (username.value == "")
+			{
+				alert("please enter username");
+				return false;
+			}
+			else 
+			{
+				alert("Username successful");
+				return true;
+			}
+			
+			
+			
+			//----password----
+			var password = document.getElementById("pwd").value;
+			var password = document.getElementById("pwd").value;
+			if (password.trim().length<6 | password.trim().length>10)
+			{
+				alert("password size must be between 6 to 10 characters");
+				return false;
+			}
+			else if (password.search(/[A-Z]/)==-1)
+			{
+				alert("password  must contain atleast 1 uppercase letter");
+				return false;
+			}
+			
+			else if (password.search(/[a-z]/)==-1)
+			{
+				alert("password  must contain atleast 1 lowercase letter");
+				return false;
+			}
+			else if (password.search(/[0-9]/)==-1)
+			{
+				alert("password  must contain atleast 1 number");
+				return false;
+			}
+			else if (password.search(/[\@\$\#\$\;\:\.\,]/)==-1)
+			{
+				alert("password  must contain atleast 1 special character");
+				return false;
+			}
+			else
+			{
+				alert("password sucessful");
+				return true;
+			}
+			
+			//----DOB----
+			var birth_date = document.getElementById("Bt");
+           
+			}
+
+
+
+
+
+
+
+	</script>
+</head>
+<body bgcolor="#E4EE8E">
+<h1><center>Personal Information</center></h1>
+
+<form onsubmit = "return validate()" action="p1.html">
+<label>Enter name: </label>
+<input type="text" id="fname" name="fname" placeholder="Enter first name" autocomplete><br><br>
+
+
+<!--<label>Name: </label>
+<input type="text" id="fname" name="fname" value="Joy" readonly><br><br>-->
+
+
+<label>Enter lastname: </label>
+<input type="text" id="lname" name="lname" placeholder="Enter last name" autocomplete><br><br>
+
+
+<label>Enter phone no: </label>
+<input type="numbers" id="pno" name="pno" placeholder="Enter phone no"><br><br>
+
+
+<br><h3>Select gender</h3>
+<input type="radio" id="ma" name="gender" value="male">male
+<br><input type="radio" id="fe" name="gender" value="female">female
+<br><input type="radio" id="ot" name="gender" value="others">others
+
+
+<br><h3>Qualification</h3>
+<input type="checkbox" id="ss" name="qual" value="SSC">SSC
+<br><input type="checkbox" id="hs" name="qual" value="HSSC">HSSC
+<br><input type="checkbox" id="dd" name="qual" value="DEGREE/DIPLOMA" checked>DEGREE/DIPLOMA
+
+
+<br><br><label>Nationality: </label>
+<input type="text" id="nat" name="nationality" value="Indian" disabled><br><br>
+
+
+
+<br><br><h3>State</h3>
+<label>Select your State:</label>
+<select id="state">
+<option value="Goa">Goa</option>
+<option value="Maharashtra">Maharashtra</option>
+<option value="Delhi">Delhi</option>
+<option value="Karnataka">Karnataka</option>
+</select>
+
+
+<br><br><label>Enter Email address: </label>
+<br><br><input type="email" id="eid" name="email" required><br><br>
+
+
+<h3>Enter password and username </h3>
+<label>Enter username: </label>
+<br><input type="username" id="uname" name="username" autofocus><br>
+<label>Enter Password: </label><br>
+<input type="Password" id="pwd" name="Password" autofocus>
+
+
+<br><br><label>Enter DOB:</label>
+<input type="date" id="Bt" name="Birthdate"><br>
+<!--<input type="submit" name="submit"><br>-->
+
+
+<br><br><label>Select your favorite color:</label>
+<input type="color" id="cl" name="color"><br>
+
+
+<br><br><label>Select File:</label>
+<input type="file" id="fe" name="file"><br>
+
+
+<br><br><label>Number field(between 2 to 8):</label>
+<input type="number" id="Quantity" name="Quantity"  min="2" max="8"><br>
+
+
+<br><br><label>Range(between 10 to 35):</label>
+<input type="range" id="Range" name="Range" step="5"  min="10"  max="35"><br><br>
+
+
+<input type="Submit" value="Submit" >
+<input type="Reset" value="Reset">
+
+
+</form>
+</body>
+
+</html>
